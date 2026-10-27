@@ -1,0 +1,233 @@
+[
+  {
+    "key": "A personal setting can only make two-factor authentication stricter",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Admin",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Auditor",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Back",
+    "context": "src/routes/security.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "by",
+    "context": "src/components/brand/Logo.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "CareCompanion",
+    "context": "src/components/brand/Logo.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Check your email and password",
+    "context": "src/routes/login.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Code from your authenticator app",
+    "context": "src/routes/security.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "CRC",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "CreativeTechy",
+    "context": "src/components/brand/Logo.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Demo mode",
+    "context": "src/routes/_app.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Email",
+    "context": "src/routes/login.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Enabled",
+    "context": "src/routes/security.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Finance",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Hello, {name}",
+    "context": "src/routes/_app/index.tsx",
+    "placeholders": [
+      "name"
+    ]
+  },
+  {
+    "key": "Home",
+    "context": "src/routes/_app.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Off",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Only an admin can publish a language",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Optional",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Participant",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Password",
+    "context": "src/routes/login.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "QR code for your authenticator app",
+    "context": "src/routes/security.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Remove",
+    "context": "src/routes/security.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Required",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Security",
+    "context": "src/routes/_app.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Set up authenticator app",
+    "context": "src/routes/security.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Sign in",
+    "context": "src/routes/login.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Sign out",
+    "context": "src/routes/_app.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Site Manager",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Something went wrong",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Sponsor",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Study Manager",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Switch to dark theme",
+    "context": "src/components/layout/ThemeToggle.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Switch to light theme",
+    "context": "src/components/layout/ThemeToggle.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "That code is not valid",
+    "context": "src/routes/security.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "The audit log cannot be changed",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "This record cannot be deleted",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Two-factor authentication",
+    "context": "src/routes/_app/index.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Two-factor authentication cannot be loosened for {role}",
+    "context": "src/i18n/messages.ts",
+    "placeholders": [
+      "role"
+    ]
+  },
+  {
+    "key": "Two-factor authentication must stay required for {role}",
+    "context": "src/i18n/messages.ts",
+    "placeholders": [
+      "role"
+    ]
+  },
+  {
+    "key": "Unknown",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Unknown role",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Verify",
+    "context": "src/routes/security.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "You cannot change this field",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "You cannot read the audit log",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  }
+]

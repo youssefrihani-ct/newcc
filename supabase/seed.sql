@@ -1,0 +1,3 @@
+-- Seed skeleton. Demo accounts are created by scripts/seed.mjs (password from the untracked .env).
+-- The translation keys are generated into seeds/translation_keys.sql by `npm run i18n`.
+-- Later phases add the UK demo studies from samples/uk-demo/.

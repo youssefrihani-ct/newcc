@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run i18n:check
+      - run: npm test
+      - run: npm run build
+      - name: Secret scan
+        run: |
+          if git grep -nE '(service_role|sb_secret_)[A-Za-z0-9_.-]{20,}' -- . ':!package-lock.json'; then
+            echo "Possible secret committed"; exit 1
+          fi
+
+  database:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Start local Supabase
+        run: npx supabase start -x studio,imgproxy,edge-runtime,logflare,vector,mailpit,realtime,storage-api,postgres-meta
+      - name: SQL and RLS tests
+        run: npx supabase test db
+      - name: Generated types are current
+        run: |
+          npm run db:types
+          git diff --exit-code src/lib/database.types.ts

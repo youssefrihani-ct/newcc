@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  Design tokens (spec 5c, 20). Brand colours are sampled from docs/brand/ by
+  scripts/brand-assets.mjs: navy for text, blue for the primary action, violet as
+  accent, magenta sparingly. 4/8 px spacing scale, 12 px card radius, two font weights.
+*/
+:root {
+  --brand-navy: #0a1240;
+  --brand-blue: #0a5cf0;
+  --brand-violet: #5020ff;
+  --brand-magenta: #c000ff;
+
+  --background: #f7f8fc;
+  --surface: #ffffff;
+  --foreground: #0a1240;
+  --muted: #eceef7;
+  --muted-foreground: #4a5072;
+  --border: #d9dcec;
+  --primary: var(--brand-blue);
+  --primary-foreground: #ffffff;
+  --accent: var(--brand-violet);
+  --ring: var(--brand-violet);
+  --info: #0a5cf0;
+  --success: #17803d;
+  --warning: #a15c07;
+  --danger: #c4262e;
+}
+
+.dark {
+  --background: #0d1024;
+  --surface: #151937;
+  --foreground: #eef0fb;
+  --muted: #1f2447;
+  --muted-foreground: #a9aed0;
+  --border: #2c3260;
+  --primary: #6b8cff;
+  --primary-foreground: #0d1024;
+  --accent: #9b79ff;
+  --ring: #9b79ff;
+  --info: #7b9aff;
+  --success: #4cc27c;
+  --warning: #e0a34a;
+  --danger: #ff7b82;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-ring: var(--ring);
+  --color-info: var(--info);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  font-family: var(--font-sans);
+  background: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-weight: 400;
+}
+
+strong,
+b,
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
