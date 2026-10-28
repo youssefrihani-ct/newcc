@@ -22,7 +22,8 @@
     "db:test": "supabase test db",
     "db:types": "node scripts/gen-db-types.mjs",
     "seed": "node --env-file=.env scripts/seed.mjs",
-    "check": "npm run typecheck && npm run lint && npm run i18n:check && npm test && npm run build"
+    "check": "npm run typecheck && npm run lint && npm run i18n:check && npm test && npm run build",
+    "seed:staging": "node --env-file=.env.staging scripts/seed.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",

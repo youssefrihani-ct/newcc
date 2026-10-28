@@ -12,8 +12,11 @@ if (!url || !serviceKey || !password) {
   console.error("Set VITE_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY and DEMO_PASSWORD in .env");
   process.exit(1);
 }
-if (!/^(https?:\/\/)(127\.0\.0\.1|localhost)(:|\/|$)/.test(url)) {
-  console.error("Refusing to seed a non-local database");
+// Only the local stack, or the one named staging project, may be seeded.
+const STAGING_URL = "https://tkqetlqbsyvziumcvfan.supabase.co";
+const isLocal = /^https?:\/\/(127\.0\.0\.1|localhost)(:|\/|$)/.test(url);
+if (!isLocal && url !== STAGING_URL) {
+  console.error("Refusing to seed an unknown database");
   process.exit(1);
 }
 
