@@ -100,7 +100,7 @@ do $$ begin
 end $$;
 select is((select status from public.participant_profiles where id = '00000000-0000-0000-0000-0000000000e1'), 'invited', 'participant cannot edit their enrolment');
 select ok(not tests.can('00000000-0000-0000-0000-0000000000a2', 'aal1', $$insert into public.trials (code, title) values ('T-9', 'x')$$), 'study manager cannot create studies');
-select ok(tests.can('00000000-0000-0000-0000-0000000000a2', 'aal1', $$insert into public.site_staff_assignments (user_id, trial_id, site_id, role) values ('00000000-0000-0000-0000-0000000000a9', '00000000-0000-0000-0000-0000000000d1', '00000000-0000-0000-0000-0000000000b1', 'crc')$$), 'study manager assigns a crc inside their study');
+select ok(not tests.can('00000000-0000-0000-0000-0000000000a2', 'aal1', $$insert into public.site_staff_assignments (user_id, trial_id, site_id, role) values ('00000000-0000-0000-0000-0000000000a9', '00000000-0000-0000-0000-0000000000d1', '00000000-0000-0000-0000-0000000000b1', 'crc')$$), 'study manager cannot write assignments directly (the signed RPC is the only way)');
 select ok(not tests.can('00000000-0000-0000-0000-0000000000a2', 'aal1', $$insert into public.site_staff_assignments (user_id, trial_id, site_id, role) values ('00000000-0000-0000-0000-0000000000a9', '00000000-0000-0000-0000-0000000000d2', '00000000-0000-0000-0000-0000000000b2', 'crc')$$), 'study manager cannot assign staff in another study');
 
 select * from finish();

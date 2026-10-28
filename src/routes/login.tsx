@@ -93,7 +93,17 @@ function LoginPage() {
               key={role}
               variant="secondary"
               disabled={busy}
-              onClick={() => void signIn(address, import.meta.env.VITE_DEMO_PASSWORD ?? "")}
+              onClick={() => {
+                // Local demo: the build carries the demo password and signs in at once.
+                // Shared staging: only the email is filled in; the password is typed once.
+                const demoPassword = import.meta.env.VITE_DEMO_PASSWORD;
+                if (demoPassword) {
+                  void signIn(address, demoPassword);
+                } else {
+                  setEmail(address);
+                  document.getElementById("password")?.focus();
+                }
+              }}
             >
               {roleLabel(role)}
             </Button>

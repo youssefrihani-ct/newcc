@@ -7,6 +7,8 @@ export type SecurityState = {
   aal: "aal1" | "aal2";
   mfa_satisfied: boolean;
   demo_mode: boolean;
+  must_change_password: boolean;
+  signature_statement_accepted: boolean;
 };
 
 export async function fetchSecurityState(): Promise<SecurityState> {

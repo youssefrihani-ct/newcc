@@ -26,7 +26,7 @@ npm run dev           # http://localhost:5273
 | Command | What it does |
 |---|---|
 | `npm run check` | type-check, lint, catalogue check, unit tests, build |
-| `npm run db:test` | SQL and RLS tests (pgTAP) in the local database |
+| `npm run db:test` | rebuilds the local database, runs the SQL and RLS tests (pgTAP), then reseeds the demo accounts |
 | `npm run db:reset` | rebuild the database from the migrations |
 | `npm run db:types` | regenerate `src/lib/database.types.ts` after a migration (commit it) |
 | `npm run i18n` | rebuild the translation catalogue manifest from `t("...")` calls |

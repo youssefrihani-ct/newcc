@@ -699,14 +699,14 @@ isOneToOne: false
                   ]
                 },"profiles": {
                   Row: {
-                    "avatar_path": string | null,"created_at": string,"email": string | null,"full_name": string,"id": string,"language": string,"mfa_policy_override": Database["public"]['Enums']["mfa_policy"] | null,"phone": string | null,"status": string,"updated_at": string
+                    "avatar_path": string | null,"created_at": string,"email": string | null,"full_name": string,"id": string,"language": string,"mfa_policy_override": Database["public"]['Enums']["mfa_policy"] | null,"must_change_password": boolean,"phone": string | null,"status": string,"updated_at": string
                   }
                   ComputedFields: never
                   Insert: {
-                    "avatar_path"?: string | null,"created_at"?: string,"email"?: string | null,"full_name"?: string,"id": string,"language"?: string,"mfa_policy_override"?: Database["public"]['Enums']["mfa_policy"] | null,"phone"?: string | null,"status"?: string,"updated_at"?: string
+                    "avatar_path"?: string | null,"created_at"?: string,"email"?: string | null,"full_name"?: string,"id": string,"language"?: string,"mfa_policy_override"?: Database["public"]['Enums']["mfa_policy"] | null,"must_change_password"?: boolean,"phone"?: string | null,"status"?: string,"updated_at"?: string
                   }
                   Update: {
-                    "avatar_path"?: string | null,"created_at"?: string,"email"?: string | null,"full_name"?: string,"id"?: string,"language"?: string,"mfa_policy_override"?: Database["public"]['Enums']["mfa_policy"] | null,"phone"?: string | null,"status"?: string,"updated_at"?: string
+                    "avatar_path"?: string | null,"created_at"?: string,"email"?: string | null,"full_name"?: string,"id"?: string,"language"?: string,"mfa_policy_override"?: Database["public"]['Enums']["mfa_policy"] | null,"must_change_password"?: boolean,"phone"?: string | null,"status"?: string,"updated_at"?: string
                   }
                   Relationships: [
                     
@@ -726,6 +726,80 @@ isOneToOne: false
                     {
       foreignKeyName: "role_mfa_policies_updated_by_fkey"
       columns: ["updated_by"]
+isOneToOne: false
+      referencedRelation: "profiles"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"signature_acknowledgements": {
+                  Row: {
+                    "accepted_at": string,"created_at": string,"id": string,"updated_at": string,"user_id": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "accepted_at"?: string,"created_at"?: string,"id"?: string,"updated_at"?: string,"user_id": string
+                  }
+                  Update: {
+                    "accepted_at"?: string,"created_at"?: string,"id"?: string,"updated_at"?: string,"user_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "signature_acknowledgements_user_id_fkey"
+      columns: ["user_id"]
+isOneToOne: true
+      referencedRelation: "profiles"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"signature_attempts": {
+                  Row: {
+                    "created_at": string,"id": string,"outcome": string,"reason": string | null,"updated_at": string,"user_id": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "created_at"?: string,"id"?: string,"outcome": string,"reason"?: string | null,"updated_at"?: string,"user_id": string
+                  }
+                  Update: {
+                    "created_at"?: string,"id"?: string,"outcome"?: string,"reason"?: string | null,"updated_at"?: string,"user_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "signature_attempts_user_id_fkey"
+      columns: ["user_id"]
+isOneToOne: false
+      referencedRelation: "profiles"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"signature_policies": {
+                  Row: {
+                    "action": string,"created_at": string,"id": string,"meaning": string,"required": boolean,"second_signer_above_amount": number | null,"updated_at": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "action": string,"created_at"?: string,"id"?: string,"meaning"?: string,"required"?: boolean,"second_signer_above_amount"?: number | null,"updated_at"?: string
+                  }
+                  Update: {
+                    "action"?: string,"created_at"?: string,"id"?: string,"meaning"?: string,"required"?: boolean,"second_signer_above_amount"?: number | null,"updated_at"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
+                },"signatures": {
+                  Row: {
+                    "action": string,"auth_method": string,"content_hash": string,"created_at": string,"device": string | null,"full_name": string,"id": string,"ip_address": string | null,"meaning": string,"record_id": string,"record_type": string,"record_version": number,"role_title": string,"signed_at": string,"superseded_at": string | null,"updated_at": string,"user_id": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "action": string,"auth_method": string,"content_hash": string,"created_at"?: string,"device"?: string | null,"full_name": string,"id"?: string,"ip_address"?: string | null,"meaning": string,"record_id": string,"record_type": string,"record_version"?: number,"role_title": string,"signed_at"?: string,"superseded_at"?: string | null,"updated_at"?: string,"user_id": string
+                  }
+                  Update: {
+                    "action"?: string,"auth_method"?: string,"content_hash"?: string,"created_at"?: string,"device"?: string | null,"full_name"?: string,"id"?: string,"ip_address"?: string | null,"meaning"?: string,"record_id"?: string,"record_type"?: string,"record_version"?: number,"role_title"?: string,"signed_at"?: string,"superseded_at"?: string | null,"updated_at"?: string,"user_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "signatures_user_id_fkey"
+      columns: ["user_id"]
 isOneToOne: false
       referencedRelation: "profiles"
       referencedColumns: ["id"]
@@ -967,8 +1041,17 @@ isOneToOne: false
             [_ in never]: never
           }
           Functions: {
-            "app_error":
+            "accept_signature_statement":
+{ Args: Record<PropertyKey, never>; Returns: undefined
+                           },
+"app_error":
 { Args: { "code": string,"params"?: Json }; Returns: undefined
+                           },
+"assign_site_staff":
+{ Args: { "p_reason": string,"p_role": Database["public"]['Enums']["app_role"],"p_site": string,"p_trial": string,"p_user": string }; Returns: string
+                           },
+"assign_study_manager":
+{ Args: { "p_reason": string,"p_trial": string,"p_user": string }; Returns: string
                            },
 "audit_attach":
 { Args: { "tbl": unknown }; Returns: undefined
@@ -990,14 +1073,32 @@ isOneToOne: false
 "audit_write":
 { Args: { "p_action": string,"p_changed": Json,"p_entity_id": string,"p_entity_type": string,"p_reason"?: string,"p_reason_code"?: string,"p_scope"?: Json,"p_signature_id"?: string,"p_source"?: string }; Returns: number
                            },
+"begin_signed_action":
+{ Args: { "p_action": string,"p_reason": string,"p_sig": string }; Returns: undefined
+                           },
+"can_view_profile":
+{ Args: { "target": string,"uid": string }; Returns: boolean
+                           },
+"create_signature":
+{ Args: { "p_action": string,"p_meaning"?: string,"p_record_id": string,"p_record_type": string,"p_signature_id"?: string }; Returns: string
+                           },
+"create_staff_user":
+{ Args: { "p_email": string,"p_full_name": string,"p_reason": string,"p_role": Database["public"]['Enums']["app_role"],"p_site"?: string,"p_trial"?: string }; Returns: Json
+                           },
 "current_aal":
 { Args: Record<PropertyKey, never>; Returns: string
                            },
 "effective_mfa_policy":
 { Args: { "uid": string }; Returns: Database["public"]['Enums']["mfa_policy"]
                            },
+"end_signed_action":
+{ Args: Record<PropertyKey, never>; Returns: undefined
+                           },
 "get_catalogue":
 { Args: { "lang": string }; Returns: Json
+                           },
+"grant_role":
+{ Args: { "p_reason": string,"p_role": Database["public"]['Enums']["app_role"],"p_user": string }; Returns: string
                            },
 "has_role":
 { Args: { "r": Database["public"]['Enums']["app_role"],"uid": string }; Returns: boolean
@@ -1016,6 +1117,12 @@ isOneToOne: false
               "code": string,"english_name": string,"is_default": boolean,"native_name": string
             }[]
                            },
+"log_export":
+{ Args: { "p_details"?: Json,"p_list": string,"p_rows": number }; Returns: undefined
+                           },
+"log_signature_attempt":
+{ Args: { "p_outcome": string,"p_reason"?: string }; Returns: undefined
+                           },
 "manages_participant":
 { Args: { "participant": string,"uid": string }; Returns: boolean
                            },
@@ -1033,6 +1140,41 @@ isOneToOne: false
                            },
 "my_security_state":
 { Args: Record<PropertyKey, never>; Returns: Json
+                           },
+"password_changed":
+{ Args: Record<PropertyKey, never>; Returns: undefined
+                           },
+"require_actor":
+{ Args: { "p_admin_only"?: boolean }; Returns: string
+                           },
+"reset_user_mfa":
+{ Args: { "p_reason": string,"p_user": string }; Returns: undefined
+                           },
+"revoke_assignment":
+{ Args: { "p_id": string,"p_kind": string,"p_reason": string }; Returns: undefined
+                           },
+"revoke_role":
+{ Args: { "p_reason": string,"p_user_role": string }; Returns: undefined
+                           },
+"set_user_status":
+{ Args: { "p_reason": string,"p_status": string,"p_user": string }; Returns: undefined
+                           },
+"signable_snapshot":
+{ Args: { "p_id": string,"p_type": string }; Returns: Json
+                           },
+"signature_reauth_method":
+{ Args: Record<PropertyKey, never>; Returns: string
+                           },
+"signature_required":
+{ Args: { "p_action": string }; Returns: boolean
+                           },
+"signatures_for":
+{ Args: { "p_id": string,"p_type": string }; Returns: {
+              "full_name": string,"id": string,"is_current": boolean,"meaning": string,"record_version": number,"role_title": string,"signed_at": string
+            }[]
+                           },
+"snapshot_hash":
+{ Args: { "p_id": string,"p_type": string }; Returns: string
                            },
 "works_on_trial":
 { Args: { "trial": string,"uid": string }; Returns: boolean

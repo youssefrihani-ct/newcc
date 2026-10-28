@@ -1,8 +1,54 @@
 [
   {
+    "key": "{from}–{to} of {total}",
+    "context": "src/components/data-table/DataTable.tsx",
+    "placeholders": [
+      "from",
+      "to",
+      "total"
+    ]
+  },
+  {
     "key": "A personal setting can only make two-factor authentication stricter",
     "context": "src/i18n/messages.ts",
     "placeholders": []
+  },
+  {
+    "key": "A signature cannot be changed",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Accept the electronic signature statement first",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Actions",
+    "context": "src/components/data-table/DataTable.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Active",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Add user",
+    "context": "src/features/users/CreateUserDialog.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Added",
+    "context": "src/routes/_app/users.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Added {date}",
+    "context": "src/features/users/UserDrawerContent.tsx",
+    "placeholders": [
+      "date"
+    ]
   },
   {
     "key": "Admin",
@@ -10,7 +56,71 @@
     "placeholders": []
   },
   {
+    "key": "AI settings",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Already assigned",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Approved",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Archived",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Assign {name} to a site",
+    "context": "src/features/users/UserActionDialog.tsx",
+    "placeholders": [
+      "name"
+    ]
+  },
+  {
+    "key": "Assign {name} to a study",
+    "context": "src/features/users/UserActionDialog.tsx",
+    "placeholders": [
+      "name"
+    ]
+  },
+  {
+    "key": "Assign to a site",
+    "context": "src/features/users/UserDrawerContent.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Assign to a study",
+    "context": "src/features/users/UserDrawerContent.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Assignment not found",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Audit",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Audit log",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
     "key": "Auditor",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Authored",
     "context": "src/i18n/labels.ts",
     "placeholders": []
   },
@@ -25,6 +135,11 @@
     "placeholders": []
   },
   {
+    "key": "Cancel",
+    "context": "src/features/signing/SignedActionDialog.tsx",
+    "placeholders": []
+  },
+  {
     "key": "CareCompanion",
     "context": "src/components/brand/Logo.tsx",
     "placeholders": []
@@ -35,8 +150,78 @@
     "placeholders": []
   },
   {
+    "key": "Check your password",
+    "context": "src/features/signing/SignedActionDialog.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Choose a different password",
+    "context": "src/routes/change-password.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Choose a valid signature meaning",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Claim Rules",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Claims",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Clients",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Close",
+    "context": "src/components/layout/StaffShell.tsx",
+    "placeholders": []
+  },
+  {
     "key": "Code from your authenticator app",
-    "context": "src/routes/security.tsx",
+    "context": "src/features/signing/SignedActionDialog.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Collapse sidebar",
+    "context": "src/components/layout/StaffShell.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Columns",
+    "context": "src/components/data-table/DataTable.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Consent",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Contracts",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Contracts & funds",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Copy",
+    "context": "src/features/users/CreateUserDialog.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Countries",
+    "context": "src/features/nav/nav.ts",
     "placeholders": []
   },
   {
@@ -50,13 +235,33 @@
     "placeholders": []
   },
   {
+    "key": "Dashboard",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
     "key": "Demo mode",
-    "context": "src/routes/_app.tsx",
+    "context": "src/components/layout/ParticipantShell.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Diary",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Document types",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Done",
+    "context": "src/features/users/CreateUserDialog.tsx",
     "placeholders": []
   },
   {
     "key": "Email",
-    "context": "src/routes/login.tsx",
+    "context": "src/features/users/CreateUserDialog.tsx",
     "placeholders": []
   },
   {
@@ -65,8 +270,84 @@
     "placeholders": []
   },
   {
+    "key": "End",
+    "context": "src/features/users/UserDrawerContent.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "End assignment for {name}",
+    "context": "src/features/users/UserActionDialog.tsx",
+    "placeholders": [
+      "name"
+    ]
+  },
+  {
+    "key": "Enter a name",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Enter a reason",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Enter a valid email address",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Enter your authenticator code to sign",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Enter your password again to sign",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Expand sidebar",
+    "context": "src/components/layout/StaffShell.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Export",
+    "context": "src/components/data-table/DataTable.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "FAQ",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
     "key": "Finance",
     "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Give this to {email} now. It is shown once and must be changed at first sign-in.",
+    "context": "src/features/users/CreateUserDialog.tsx",
+    "placeholders": [
+      "email"
+    ]
+  },
+  {
+    "key": "Grant a role",
+    "context": "src/features/users/UserDrawerContent.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Grant a role to {name}",
+    "context": "src/features/users/UserActionDialog.tsx",
+    "placeholders": [
+      "name"
+    ]
+  },
+  {
+    "key": "Grant this person the role first",
+    "context": "src/i18n/messages.ts",
     "placeholders": []
   },
   {
@@ -78,7 +359,112 @@
   },
   {
     "key": "Home",
-    "context": "src/routes/_app.tsx",
+    "context": "src/components/layout/ParticipantShell.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Integrations",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Invalid signing outcome",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Invalid user status",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Loading",
+    "context": "src/components/data-table/DataTable.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Main",
+    "context": "src/components/layout/ParticipantShell.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Messages",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Messaging channels",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "More",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Move down",
+    "context": "src/components/data-table/DataTable.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Move up",
+    "context": "src/components/data-table/DataTable.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "My electronic signature is the legally binding equivalent of my handwritten signature",
+    "context": "src/features/signing/SignedActionDialog.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Name",
+    "context": "src/features/users/CreateUserDialog.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "New password",
+    "context": "src/routes/change-password.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Next page",
+    "context": "src/components/data-table/DataTable.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "No one is assigned to your sites yet",
+    "context": "src/routes/_app/team.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "No roles",
+    "context": "src/features/users/UserDrawerContent.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "No users match. Add a user or clear the filters",
+    "context": "src/routes/_app/users.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Not available yet",
+    "context": "src/routes/_app/p/$page.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Not found",
+    "context": "src/routes/_app/p/$page.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Nothing needs your action",
+    "context": "src/routes/_app/index.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Notifications",
+    "context": "src/features/nav/nav.ts",
     "placeholders": []
   },
   {
@@ -92,6 +478,16 @@
     "placeholders": []
   },
   {
+    "key": "Open",
+    "context": "src/routes/_app/users.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Open menu",
+    "context": "src/components/layout/StaffShell.tsx",
+    "placeholders": []
+  },
+  {
     "key": "Optional",
     "context": "src/i18n/labels.ts",
     "placeholders": []
@@ -102,8 +498,38 @@
     "placeholders": []
   },
   {
+    "key": "Participants",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
     "key": "Password",
-    "context": "src/routes/login.tsx",
+    "context": "src/features/signing/SignedActionDialog.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Payment runs",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Payment schedule",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Platform",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Previous page",
+    "context": "src/components/data-table/DataTable.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Profile",
+    "context": "src/routes/_app/more.tsx",
     "placeholders": []
   },
   {
@@ -112,8 +538,48 @@
     "placeholders": []
   },
   {
+    "key": "Questionnaires",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Reactivate",
+    "context": "src/features/users/UserDrawerContent.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Reactivate {name}",
+    "context": "src/features/users/UserActionDialog.tsx",
+    "placeholders": [
+      "name"
+    ]
+  },
+  {
+    "key": "Reason",
+    "context": "src/features/users/CreateUserDialog.tsx",
+    "placeholders": []
+  },
+  {
     "key": "Remove",
-    "context": "src/routes/security.tsx",
+    "context": "src/features/users/UserDrawerContent.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Remove {role} from {name}",
+    "context": "src/features/users/UserActionDialog.tsx",
+    "placeholders": [
+      "role",
+      "name"
+    ]
+  },
+  {
+    "key": "Repeat password",
+    "context": "src/routes/change-password.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Reports",
+    "context": "src/features/nav/nav.ts",
     "placeholders": []
   },
   {
@@ -122,8 +588,70 @@
     "placeholders": []
   },
   {
+    "key": "Reset to default",
+    "context": "src/components/data-table/DataTable.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Reset two-factor authentication",
+    "context": "src/features/users/UserDrawerContent.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Reset two-factor authentication for {name}",
+    "context": "src/features/users/UserActionDialog.tsx",
+    "placeholders": [
+      "name"
+    ]
+  },
+  {
+    "key": "Responsible",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Reviewed",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Role",
+    "context": "src/features/users/CreateUserDialog.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Role not found",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Roles",
+    "context": "src/features/users/UserDrawerContent.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Rows per page",
+    "context": "src/components/data-table/DataTable.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Save",
+    "context": "src/routes/change-password.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Search",
+    "context": "src/components/data-table/DataTable.tsx",
+    "placeholders": []
+  },
+  {
     "key": "Security",
-    "context": "src/routes/_app.tsx",
+    "context": "src/components/layout/StaffShell.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Security & data",
+    "context": "src/features/nav/nav.ts",
     "placeholders": []
   },
   {
@@ -132,13 +660,65 @@
     "placeholders": []
   },
   {
+    "key": "Set your password",
+    "context": "src/routes/change-password.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Sign and create",
+    "context": "src/features/users/CreateUserDialog.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Sign and end",
+    "context": "src/features/users/UserActionDialog.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Sign and remove",
+    "context": "src/features/users/UserActionDialog.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Sign and save",
+    "context": "src/features/users/UserActionDialog.tsx",
+    "placeholders": []
+  },
+  {
     "key": "Sign in",
     "context": "src/routes/login.tsx",
     "placeholders": []
   },
   {
+    "key": "Sign in to continue",
+    "context": "src/features/signing/SignedActionDialog.tsx",
+    "placeholders": []
+  },
+  {
     "key": "Sign out",
-    "context": "src/routes/_app.tsx",
+    "context": "src/components/layout/StaffShell.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Sign: {meaning}",
+    "context": "src/features/signing/SignedActionDialog.tsx",
+    "placeholders": [
+      "meaning"
+    ]
+  },
+  {
+    "key": "Signature policy",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Signing is locked after repeated failures. Try again later",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Site",
+    "context": "src/features/users/UserActionDialog.tsx",
     "placeholders": []
   },
   {
@@ -147,8 +727,13 @@
     "placeholders": []
   },
   {
+    "key": "Sites",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
     "key": "Something went wrong",
-    "context": "src/i18n/messages.ts",
+    "context": "src/components/data-table/DataTable.tsx",
     "placeholders": []
   },
   {
@@ -157,7 +742,44 @@
     "placeholders": []
   },
   {
+    "key": "Status",
+    "context": "src/routes/_app/users.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Studies",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Study",
+    "context": "src/features/users/UserActionDialog.tsx",
+    "placeholders": []
+  },
+  {
     "key": "Study Manager",
+    "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Study not found",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Suspend",
+    "context": "src/features/users/UserDrawerContent.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "Suspend {name}",
+    "context": "src/features/users/UserActionDialog.tsx",
+    "placeholders": [
+      "name"
+    ]
+  },
+  {
+    "key": "Suspended",
     "context": "src/i18n/labels.ts",
     "placeholders": []
   },
@@ -172,12 +794,47 @@
     "placeholders": []
   },
   {
+    "key": "Team",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Temporary password",
+    "context": "src/features/users/CreateUserDialog.tsx",
+    "placeholders": []
+  },
+  {
     "key": "That code is not valid",
-    "context": "src/routes/security.tsx",
+    "context": "src/features/signing/SignedActionDialog.tsx",
     "placeholders": []
   },
   {
     "key": "The audit log cannot be changed",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "The last admin cannot be removed",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "The passwords do not match",
+    "context": "src/routes/change-password.tsx",
+    "placeholders": []
+  },
+  {
+    "key": "This action has no signature policy",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "This email is already in use",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "This person already has this role",
     "context": "src/i18n/messages.ts",
     "placeholders": []
   },
@@ -187,8 +844,33 @@
     "placeholders": []
   },
   {
+    "key": "This record cannot be signed",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "This role cannot be granted here",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "This role is not assigned to a site",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "This site is not part of the study",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Translations",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
     "key": "Two-factor authentication",
-    "context": "src/routes/_app/index.tsx",
+    "context": "src/routes/security.tsx",
     "placeholders": []
   },
   {
@@ -211,8 +893,35 @@
     "placeholders": []
   },
   {
+    "key": "Unknown assignment type",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
     "key": "Unknown role",
     "context": "src/i18n/labels.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Use at least {count} characters",
+    "context": "src/routes/change-password.tsx",
+    "placeholders": [
+      "count"
+    ]
+  },
+  {
+    "key": "User not found",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Users",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
+    "key": "Vault",
+    "context": "src/routes/_app/more.tsx",
     "placeholders": []
   },
   {
@@ -221,7 +930,22 @@
     "placeholders": []
   },
   {
+    "key": "Visits",
+    "context": "src/features/nav/nav.ts",
+    "placeholders": []
+  },
+  {
     "key": "You cannot change this field",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "You cannot do this",
+    "context": "src/i18n/messages.ts",
+    "placeholders": []
+  },
+  {
+    "key": "You cannot do this to your own account",
     "context": "src/i18n/messages.ts",
     "placeholders": []
   },

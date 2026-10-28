@@ -10,12 +10,22 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as AppRouteImport } from './routes/_app'
+import { Route as ChangePasswordRouteImport } from './routes/change-password'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as AppIndexRouteImport } from './routes/_app/index'
+import { Route as AppMoreRouteImport } from './routes/_app/more'
+import { Route as AppTeamRouteImport } from './routes/_app/team'
+import { Route as AppUsersRouteImport } from './routes/_app/users'
+import { Route as AppPPageRouteImport } from './routes/_app/p/$page'
 
 const AppRoute = AppRouteImport.update({
   id: '/_app',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChangePasswordRoute = ChangePasswordRouteImport.update({
+  id: '/change-password',
+  path: '/change-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -33,34 +43,96 @@ const AppIndexRoute = AppIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AppRoute,
 } as any)
+const AppMoreRoute = AppMoreRouteImport.update({
+  id: '/more',
+  path: '/more',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTeamRoute = AppTeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppUsersRoute = AppUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPPageRoute = AppPPageRouteImport.update({
+  id: '/p/$page',
+  path: '/p/$page',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof AppIndexRoute
+  '/change-password': typeof ChangePasswordRoute
   '/login': typeof LoginRoute
   '/security': typeof SecurityRoute
+  '/more': typeof AppMoreRoute
+  '/team': typeof AppTeamRoute
+  '/users': typeof AppUsersRoute
+  '/p/$page': typeof AppPPageRoute
 }
 export interface FileRoutesByTo {
+  '/change-password': typeof ChangePasswordRoute
   '/login': typeof LoginRoute
   '/security': typeof SecurityRoute
+  '/more': typeof AppMoreRoute
+  '/team': typeof AppTeamRoute
+  '/users': typeof AppUsersRoute
   '/': typeof AppIndexRoute
+  '/p/$page': typeof AppPPageRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_app': typeof AppRouteWithChildren
+  '/change-password': typeof ChangePasswordRoute
   '/login': typeof LoginRoute
   '/security': typeof SecurityRoute
+  '/_app/more': typeof AppMoreRoute
+  '/_app/team': typeof AppTeamRoute
+  '/_app/users': typeof AppUsersRoute
   '/_app/': typeof AppIndexRoute
+  '/_app/p/$page': typeof AppPPageRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/login' | '/security'
+  fullPaths:
+    | '/'
+    | '/change-password'
+    | '/login'
+    | '/security'
+    | '/more'
+    | '/team'
+    | '/users'
+    | '/p/$page'
   fileRoutesByTo: FileRoutesByTo
-  to: '/login' | '/security' | '/'
-  id: '__root__' | '/_app' | '/login' | '/security' | '/_app/'
+  to:
+    | '/change-password'
+    | '/login'
+    | '/security'
+    | '/more'
+    | '/team'
+    | '/users'
+    | '/'
+    | '/p/$page'
+  id:
+    | '__root__'
+    | '/_app'
+    | '/change-password'
+    | '/login'
+    | '/security'
+    | '/_app/more'
+    | '/_app/team'
+    | '/_app/users'
+    | '/_app/'
+    | '/_app/p/$page'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   AppRoute: typeof AppRouteWithChildren
+  ChangePasswordRoute: typeof ChangePasswordRoute
   LoginRoute: typeof LoginRoute
   SecurityRoute: typeof SecurityRoute
 }
@@ -72,6 +144,13 @@ declare module '@tanstack/react-router' {
       path: ''
       fullPath: '/'
       preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/change-password': {
+      id: '/change-password'
+      path: '/change-password'
+      fullPath: '/change-password'
+      preLoaderRoute: typeof ChangePasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -95,21 +174,58 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppIndexRouteImport
       parentRoute: typeof AppRoute
     }
+    '/_app/more': {
+      id: '/_app/more'
+      path: '/more'
+      fullPath: '/more'
+      preLoaderRoute: typeof AppMoreRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/team': {
+      id: '/_app/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof AppTeamRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/users': {
+      id: '/_app/users'
+      path: '/users'
+      fullPath: '/users'
+      preLoaderRoute: typeof AppUsersRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/p/$page': {
+      id: '/_app/p/$page'
+      path: '/p/$page'
+      fullPath: '/p/$page'
+      preLoaderRoute: typeof AppPPageRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
 interface AppRouteChildren {
+  AppMoreRoute: typeof AppMoreRoute
+  AppTeamRoute: typeof AppTeamRoute
+  AppUsersRoute: typeof AppUsersRoute
   AppIndexRoute: typeof AppIndexRoute
+  AppPPageRoute: typeof AppPPageRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
+  AppMoreRoute: AppMoreRoute,
+  AppTeamRoute: AppTeamRoute,
+  AppUsersRoute: AppUsersRoute,
   AppIndexRoute: AppIndexRoute,
+  AppPPageRoute: AppPPageRoute,
 }
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   AppRoute: AppRouteWithChildren,
+  ChangePasswordRoute: ChangePasswordRoute,
   LoginRoute: LoginRoute,
   SecurityRoute: SecurityRoute,
 }

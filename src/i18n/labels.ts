@@ -30,3 +30,27 @@ export function mfaPolicyLabel(policy: string): string {
   const label = (MFA_POLICY_LABELS as Record<string, string>)[policy];
   return label ? t(label) : t("Unknown");
 }
+
+const SIGNATURE_MEANING_LABELS = {
+  authored: m("Authored"),
+  reviewed: m("Reviewed"),
+  approved: m("Approved"),
+  responsible: m("Responsible"),
+  consent: m("Consent"),
+} as const;
+
+export function signatureMeaningLabel(meaning: string): string {
+  const label = (SIGNATURE_MEANING_LABELS as Record<string, string>)[meaning];
+  return label ? t(label) : t("Unknown");
+}
+
+const USER_STATUS_LABELS = {
+  active: m("Active"),
+  suspended: m("Suspended"),
+  archived: m("Archived"),
+} as const;
+
+export function userStatusLabel(status: string): string {
+  const label = (USER_STATUS_LABELS as Record<string, string>)[status];
+  return label ? t(label) : t("Unknown");
+}

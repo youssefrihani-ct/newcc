@@ -41,6 +41,7 @@ async function findUser(email) {
   }
 }
 
+const ids = {};
 for (const account of ACCOUNTS) {
   let user = await findUser(account.email);
   if (user) {
@@ -70,5 +71,42 @@ for (const account of ACCOUNTS) {
     const insert = await db.from("user_roles").insert({ user_id: user.id, role: account.role });
     if (insert.error) throw insert.error;
   }
+  ids[account.role] = user.id;
   console.log(`seeded ${account.role}: ${account.email}`);
 }
+
+// Demo studies and assignments (fictional, from samples/uk-demo). Idempotent: rows are matched, not duplicated.
+async function ensure(table, match, extra = {}) {
+  let query = db.from(table).select("id");
+  for (const [key, value] of Object.entries(match)) query = value === null ? query.is(key, null) : query.eq(key, value);
+  const found = await query.maybeSingle();
+  if (found.error) throw found.error;
+  if (found.data) return found.data.id;
+  const inserted = await db.from(table).insert({ ...match, ...extra }).select("id").single();
+  if (inserted.error) throw inserted.error;
+  return inserted.data.id;
+}
+
+const meridian = await ensure("clients", { name: "Meridian Neurosciences Ltd" });
+const brightpath = await ensure("clients", { name: "Brightpath Children's Cancer Research" });
+const relapse = await ensure("trials", { code: "RELAPSE-STOP" }, {
+  title: "RELAPSE-STOP: Phase III relapsing multiple sclerosis", client_id: meridian, status: "recruiting",
+});
+const lumina = await ensure("trials", { code: "LUMINA-NB2" }, {
+  title: "LUMINA-NB2: Phase II relapsed neuroblastoma", client_id: brightpath, status: "recruiting",
+});
+const siteIds = {};
+for (const [study, names] of [[relapse, ["Leeds", "London", "Manchester", "Birmingham", "Glasgow"]], [lumina, ["Bristol", "Newcastle", "Southampton"]]]) {
+  for (const name of names) {
+    siteIds[name] = await ensure("sites", { name });
+    await ensure("trial_sites", { trial_id: study, site_id: siteIds[name] }, { status: "active" });
+  }
+}
+await ensure("study_team_assignments", { user_id: ids.study_manager, trial_id: relapse, revoked_at: null });
+await ensure("site_staff_assignments", { user_id: ids.site_manager, trial_id: relapse, site_id: siteIds.Leeds, role: "site_manager", revoked_at: null });
+await ensure("site_staff_assignments", { user_id: ids.crc, trial_id: relapse, site_id: siteIds.Leeds, role: "crc", revoked_at: null });
+await ensure("finance_scopes", { user_id: ids.finance, client_id: null, revoked_at: null });
+await ensure("participant_profiles", { trial_id: relapse, subject_code: "RS-001" }, {
+  user_id: ids.participant, site_id: siteIds.Leeds, status: "active",
+});
+console.log("seeded demo studies, sites and assignments");

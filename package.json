@@ -19,7 +19,7 @@
     "db:start": "supabase start",
     "db:stop": "supabase stop",
     "db:reset": "supabase db reset",
-    "db:test": "supabase test db",
+    "db:test": "supabase db reset --local && supabase test db && npm run seed",
     "db:types": "node scripts/gen-db-types.mjs",
     "seed": "node --env-file=.env scripts/seed.mjs",
     "check": "npm run typecheck && npm run lint && npm run i18n:check && npm test && npm run build",
